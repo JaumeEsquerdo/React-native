@@ -7,10 +7,13 @@ function App() {
 
   return (
     <>
-      <h1>React + TS</h1>
-      {/* <BasicTypes /> */}
-      {/* <ObjectLiterals /> */}
-      {/* <BasicFuntions /> */}
+      <div className='bg-red-600 text-white justify-normal'>
+
+        <h1 className='text-3xl font-bold underline'>React + TS</h1>
+        {/* <BasicTypes /> */}
+        {/* <ObjectLiterals /> */}
+        {/* <BasicFuntions /> */}
+      </div>
     </>
   )
 }
