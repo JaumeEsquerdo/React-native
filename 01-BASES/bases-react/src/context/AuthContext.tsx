@@ -12,7 +12,8 @@ interface AuthState {
     user?: User,
     isChecking: boolean,
     isAuthenticated: boolean,
-    loginWithEmailPassword: (emailç: string, password: string) => void
+    loginWithEmailPassword: (emailç: string, password: string) => void,
+    logout: () => void
 }
 
 interface User {
@@ -46,7 +47,10 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
         setStatus(AuthStatus.authenticated)
     };
 
-    const logout = () => { }
+    const logout = () => {
+        setUser(undefined)
+        setStatus(AuthStatus.unauthenticated)
+    }
 
     return (
         <AuthContext.Provider value={{
@@ -54,7 +58,8 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
             user: user,
             isChecking: status === AuthStatus.checking,
             isAuthenticated: status === AuthStatus.authenticated,
-            loginWithEmailPassword
+            loginWithEmailPassword,
+            logout
 
         }}>
             {children}
