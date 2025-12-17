@@ -1,20 +1,24 @@
 import './App.css'
+import { LoginPage } from './components/LoginPage'
+import { AuthProvider } from './context/AuthContext'
 // import { ObjectLiterals } from './typescript/ObjectLiterals'
 // import { BasicTypes } from './typescript/BasicTypes'
 // import { BasicFuntions } from './typescript/BasicFuntions'
-
+// import { Counter } from './components/Counter'
 function App() {
 
   return (
-    <>
-      <div className='bg-red-600 text-white justify-normal'>
+    <AuthProvider>
+      <div className='flex flex-col items-center justify-center h-svh'>
 
-        <h1 className='text-3xl font-bold underline'>React + TS</h1>
+        <h1 className='mb-5 text-4xl'>React + TS</h1>
         {/* <BasicTypes /> */}
         {/* <ObjectLiterals /> */}
         {/* <BasicFuntions /> */}
+        {/* <Counter /> */}
+        <LoginPage />
       </div>
-    </>
+    </AuthProvider>
   )
 }
 
