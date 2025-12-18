@@ -19,7 +19,7 @@ export const UsersPage = () => {
     };
     return (<>
         <h3>Usuarios</h3>
-        <table>
+        <table className="rounded-xl">
             <thead className="w-[500] bg-black rounded-xl text-white">
                 <tr>
                     <th>Avatar</th>
@@ -28,7 +28,7 @@ export const UsersPage = () => {
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody className="text-white bg-gray-500 rounded-xl">
                 {users.map(user => (
                     <UserRow key={user.id} user={user} />
                 ))}

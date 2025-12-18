@@ -1,12 +1,16 @@
 import type { User } from "../interfaces/reqres.response";
 
-export const UserRow = ({ user }: { user: User }) => {
+interface Props {
+    user: User;
+}
+
+export const UserRow = ({ user }: Props) => {
     return (
         <tr className="p-2">
             <td>
                 {user.avatar ? (
                     <img src={user.avatar}
-                        className="rounded-full w-14"
+                        className="p-2 rounded-full w-14"
                         alt={`${user.first_name} avatar`} />
                 ) : (
                     <span>No avatar</span>
