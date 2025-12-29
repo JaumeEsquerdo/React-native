@@ -7,13 +7,13 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 const App = () => {
     return (
         <SafeAreaView>
-            <View className='mt-6 mx-2.5'>
+            <View className='mt-6 mx-2.5 bg-primary'>
                 <Text className='text-3xl'
                     style={{ fontFamily: 'WorkSans-Black' }}
                 >Hola app</Text>
-                <Text className='text-2xl font-work-black'>Hola app</Text>
-                <Text className='text-3xl font-work-light'>Hola app</Text>
-                <Text className='text-xl font-work-medium'>Hola app</Text>
+                <Text className='text-2xl font-work-black text-primary'>Hola app</Text>
+                <Text className='text-3xl font-work-light text-secondary-default'>Hola app</Text>
+                <Text className='text-xl font-work-medium text-tertiary'>Hola app</Text>
             </View>
         </SafeAreaView>
     )
