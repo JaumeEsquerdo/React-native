@@ -1,11 +1,21 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+// SafeAreaView: contenedor que asegura que el contenido no se superponga
+// con áreas no seguras del dispositivo (notch, barra de estado, bordes).
 
 const App = () => {
     return (
-        <View className='mt-10'>
-            <Text className='text-3xl font-bold text-blue-500'>Hola app</Text>
-        </View>
+        <SafeAreaView>
+            <View className='mt-6 mx-2.5'>
+                <Text className='text-3xl'
+                    style={{ fontFamily: 'WorkSans-Black' }}
+                >Hola app</Text>
+                <Text className='text-2xl font-work-black'>Hola app</Text>
+                <Text className='text-3xl font-work-light'>Hola app</Text>
+                <Text className='text-xl font-work-medium'>Hola app</Text>
+            </View>
+        </SafeAreaView>
     )
 }
 
