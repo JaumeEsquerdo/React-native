@@ -9,22 +9,22 @@ SplashScreen.preventAutoHideAsync() // evitar que el splashScreen se quite hasta
 
 const RootLayout = () => {
 
-    const [fonstLoaded, error] = useFonts({
-        'WorkSans-Black': require('../assets/fonts/WorkSans-Blackt.ttf'),
-        'WorkSans-Light': require('../assets/fonts/WorkSans-Light.ttf'),
-        'WorkSans-Medium': require('../assets/fonts/WorkSans-Medium.ttf')
+    const [fontsLoaded, error] = useFonts({
+        'WorkSans-Black': require('../assets/fonts/WorkSans-Black.ttf'),
+        'WorkSans-Italic': require('../assets/fonts/WorkSans-Italic.ttf'),
+        'WorkSans-Medium': require('../assets/fonts/WorkSans-Medium.ttf'),
     })
 
     useEffect(() => {
 
         if (error) throw error
 
-        if (fonstLoaded) SplashScreen.hideAsync()
+        if (fontsLoaded) SplashScreen.hideAsync()
         // SplashScreen.hideAsync(): oculta manualmente la pantalla de carga
         // cuando la app ya terminó de cargar recursos.
-    }, [fonstLoaded, error])
+    }, [fontsLoaded, error])
 
-    if (!fonstLoaded && !error) return null
+    if (!fontsLoaded && !error) return null
 
     return (
         <Slot />

@@ -1,21 +1,46 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 // SafeAreaView: contenedor que asegura que el contenido no se superponga
 // con áreas no seguras del dispositivo (notch, barra de estado, bordes).
 
+// import { Link, Redirect } from 'expo-router'
+import CustomButton from '@/components/CustomButton'
+import { router, Link } from 'expo-router'
+
 const App = () => {
     return (
+
+
+        // return <Redirect href='/home' />
+
         <SafeAreaView>
-            <View className='mt-6 mx-2.5 bg-primary'>
-                <Text className='text-3xl'
-                    style={{ fontFamily: 'WorkSans-Black' }}
-                >Hola app</Text>
-                <Text className='text-2xl font-work-black text-primary'>Hola app</Text>
-                <Text className='text-3xl font-work-light text-secondary-default'>Hola app</Text>
-                <Text className='text-xl font-work-medium text-tertiary'>Hola app</Text>
+            <View className='px-10 mt-5'>
+
+                <Link href={'/products'} asChild>
+                    <CustomButton
+                        color='primary'
+                        className='mb-10'
+                        onPress={() => router.push('/products')}
+                    // onLongPress={onLongPress}
+                    >Productos</CustomButton>
+                </Link>
+
+
+                <CustomButton color='primary'
+                    className='mb-10'
+                    onPress={() => router.push('/products')}
+                // onLongPress={onLongPress}
+                >Productos</CustomButton>
+
+                <CustomButton color='primary'
+                    className='mb-10'
+                    variant='text-only'
+                    onPress={() => router.push('/products')}
+                // onLongPress={onLongPress}
+                >Productos</CustomButton>
             </View>
-        </SafeAreaView>
+        </SafeAreaView >
     )
 }
 
