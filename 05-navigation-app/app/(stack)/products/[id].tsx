@@ -4,7 +4,7 @@ import { Redirect, useLocalSearchParams } from 'expo-router'
 import { products } from '@/store/products.store'
 
 // Este archivo usa rutas dinámicas de expo-router:
-// la carpeta [id] permite recibir el parámetro desde la URL (products/:id)
+// la carpeta [id], puede tener cualquier nombrem productId por ej, permite recibir el parámetro desde la URL (products/:id)
 // con useLocalSearchParams obtenemos el id y cargamos el producto correspondiente
 
 const ProductsScreen = () => {
